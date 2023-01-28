@@ -51,6 +51,27 @@ const Dashboard = () => {
           />
         </Box>
         <Box
+          gridColumn={ isWholeScreen ? "span 2" : isHalfScreen ? "span 4" : "span 12" }
+          gridRow={ isWholeScreen ? "span 2" : "span 3" }
+          backgroundColor={colors.primary[400]}
+        >
+          <img src="https://drive.google.com/uc?export=view&id=1O1mMIPpkzQCyAFWJXTjFfGUZ-BSeXKN2" alt="sat-app-05.jpg" width="100%" height="100%"/>
+        </Box>
+        <Box
+          gridColumn={ isWholeScreen ? "span 2" : isHalfScreen ? "span 4" : "span 12" }
+          gridRow={ isWholeScreen ? "span 2" : "span 3" }
+          backgroundColor={colors.primary[400]}
+        >
+          <img src="https://drive.google.com/uc?export=view&id=1KSCoqgfpk9zkqB554bcq1dk39BWn4EwM" alt="sat-app-06.jpg" width="100%" height="100%"/>
+        </Box>
+        <Box
+          gridColumn={ isWholeScreen ? "span 2" : isHalfScreen ? "span 4" : "span 12" }
+          gridRow={ isWholeScreen ? "span 2" : "span 3" }
+          backgroundColor={colors.primary[400]}
+        >
+          <img src="https://drive.google.com/uc?export=view&id=14wYmwdDRRWRCOVlmchHOnvhwTd6g3NK6" alt="sat-app-07.jpg" width="100%" height="100%"/>
+        </Box>
+        <Box
           gridColumn={ isWholeScreen ? "span 3" : isHalfScreen ? "span 6" : "span 12" }
           backgroundColor={colors.primary[400]}
           display="flex"

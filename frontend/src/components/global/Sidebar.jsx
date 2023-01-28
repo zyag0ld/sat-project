@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { MenuOutlined, HomeOutlined, ReceiptOutlined, WarningAmber, HelpOutlineOutlined, FloodOutlined, WaterOutlined, ShowChartOutlined, FilterDrama } from "@mui/icons-material";
+import { MenuOutlined, HomeOutlined, ReceiptOutlined, WarningAmber, HelpOutlineOutlined, FloodOutlined, ImageOutlined, WaterOutlined, ShowChartOutlined, FilterDrama } from "@mui/icons-material";
 import { tokens } from "../../theme";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
@@ -139,9 +139,16 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Inundaciones"
+              title="Desastres naturales"
               to="/inundaciones"
               icon={<FloodOutlined />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Imágenes"
+              to="/imagenes"
+              icon={<ImageOutlined />}
               selected={selected}
               setSelected={setSelected}
             />

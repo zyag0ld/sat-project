@@ -11,6 +11,7 @@ import Inundaciones from "./screens/inundaciones";
 import Cauce from "./screens/cauce";
 import Caudal from "./screens/caudal";
 import Clima from "./screens/clima";
+import Imagenes from "./screens/imagenes";
 
 export const URL = process.env.REACT_APP_SERVER_URL; // Make available on all the project
 
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/cauce" element={<Cauce />} />
                 <Route path="/caudal" element={<Caudal />} />
                 <Route path="/clima" element={<Clima />} />
+                <Route path="/imagenes" element={<Imagenes />} />
               </Routes>
             </main>
           </div>
