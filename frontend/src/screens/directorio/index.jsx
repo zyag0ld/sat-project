@@ -51,7 +51,7 @@ const Directorio = () => {
   ];
   return (
     <Box>
-      <Header title="Directorio" subtitle="Información relevante sobre los planes de acción, refugios temporales y números de teléfono de las autoridades." />
+      <Header title="Directorio" subtitle="Información relevante sobre los planes de acción, refugios temporales y números de teléfono de las autoridades" />
       <Box>
         <Accordion sx={{backgroundColor: colors.primary[400]}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
           <AccordionSummary expandIcon={<ExpandMoreIcon/>} aria-controls="panel1bh-content" id="panel1bh-header">
