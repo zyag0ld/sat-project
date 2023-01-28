@@ -24,79 +24,100 @@ const Dashboard = () => {
         gap="15px"
         //sx={{ "& > div": { gridColumn: isWholeScreen ? undefined : isHalfScreen ? "span 6" : "span 12" } }} // next immediate child
       >
-        <Box
-          gridColumn={ isWholeScreen ? "span 3" : isHalfScreen ? "span 6" : "span 12" }
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
+        {/* BOX CLIMA */}
+        <Box 
+          gridColumn={ isWholeScreen ? "span 6" : "span 12" }
+          gridRow={ isHalfScreen ? "span 2" : "span 4" }
+          display="grid"
+          gridTemplateColumns="repeat(12, 1fr)"
+          gridAutoRows="140px"
+          gap="15px"
         >
-          <BoxClima
-            value="30 °C"
-            type="Temperatura"
-            icon={ <Thermostat sx={{ color: colors.greenAccent[600], fontSize: "44px" }}/> }
-          />
+          <Box
+            gridColumn={ isHalfScreen ? "span 6" : "span 12" }
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <BoxClima
+              value="30 °C"
+              type="Temperatura"
+              icon={ <Thermostat sx={{ color: colors.greenAccent[600], fontSize: "44px" }}/> }
+            />
+          </Box>
+          <Box
+            gridColumn={ isHalfScreen ? "span 6" : "span 12" }
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >          
+            <BoxClima
+              value="1014 hPa"
+              type="Presión atmosférica"
+              icon={ <Speed sx={{ color: colors.greenAccent[600], fontSize: "44px" }}/> }
+            />
+          </Box>
+          <Box
+            gridColumn={ isHalfScreen ? "span 6" : "span 12" }
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >          
+            <BoxClima
+              value="56%"
+              type="Porcentaje de humedad"
+              icon={ <CloudOutlined sx={{ color: colors.greenAccent[600], fontSize: "44px" }}/> }
+            />
+          </Box>
+          <Box
+            gridColumn={ isHalfScreen ? "span 6" : "span 12" }
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <BoxClima
+              value="12.9 Km/H"
+              type="Velocidad del viento"
+              icon={ <Air sx={{ color: colors.greenAccent[600], fontSize: "44px" }}/> }
+            />
+          </Box>
         </Box>
+        {/* IMAGES */}
         <Box
-          gridColumn={ isWholeScreen ? "span 3" : isHalfScreen ? "span 6" : "span 12" }
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >          
-          <BoxClima
-            value="1014 hPa"
-            type="Presión atmosférica"
-            icon={ <Speed sx={{ color: colors.greenAccent[600], fontSize: "44px" }}/> }
-          />
-        </Box>
-        <Box
-          gridColumn={ isWholeScreen ? "span 2" : isHalfScreen ? "span 4" : "span 12" }
-          gridRow={ isWholeScreen ? "span 2" : "span 3" }
-          backgroundColor={colors.primary[400]}
+          gridColumn={ isWholeScreen ? "span 6" : "span 12" }
+          gridRow={ isWholeScreen ? "span 2" : isHalfScreen ? "span 3" : "span 12" }
+          display="grid"
+          gridTemplateColumns="repeat(12, 1fr)"
+          gridAutoRows="140px"
+          gap="15px"
         >
-          <img src="https://drive.google.com/uc?export=view&id=1O1mMIPpkzQCyAFWJXTjFfGUZ-BSeXKN2" alt="sat-app-05.jpg" width="100%" height="100%"/>
+          <Box
+            gridColumn={ isWholeScreen ? "span 4" : isHalfScreen ? "span 4" : "span 12" }
+            gridRow={ isWholeScreen ? "span 2" : isHalfScreen ? "span 3" : "span 4" }
+            backgroundColor={colors.primary[400]}
+          >
+            <img src="https://drive.google.com/uc?export=view&id=1O1mMIPpkzQCyAFWJXTjFfGUZ-BSeXKN2" alt="sat-app-05.jpg" width="100%" height="100%"/>
+          </Box>
+          <Box
+            gridColumn={ isWholeScreen ? "span 4" : isHalfScreen ? "span 4" : "span 12" }
+            gridRow={ isWholeScreen ? "span 2" : isHalfScreen ? "span 3" : "span 4" }
+            backgroundColor={colors.primary[400]}
+          >
+            <img src="https://drive.google.com/uc?export=view&id=1KSCoqgfpk9zkqB554bcq1dk39BWn4EwM" alt="sat-app-06.jpg" width="100%" height="100%"/>
+          </Box>
+          <Box
+            gridColumn={ isWholeScreen ? "span 4" : isHalfScreen ? "span 4" : "span 12" }
+            gridRow={ isWholeScreen ? "span 2" : isHalfScreen ? "span 3" : "span 4" }
+            backgroundColor={colors.primary[400]}
+          >
+            <img src="https://drive.google.com/uc?export=view&id=14wYmwdDRRWRCOVlmchHOnvhwTd6g3NK6" alt="sat-app-07.jpg" width="100%" height="100%"/>
+          </Box>
         </Box>
-        <Box
-          gridColumn={ isWholeScreen ? "span 2" : isHalfScreen ? "span 4" : "span 12" }
-          gridRow={ isWholeScreen ? "span 2" : "span 3" }
-          backgroundColor={colors.primary[400]}
-        >
-          <img src="https://drive.google.com/uc?export=view&id=1KSCoqgfpk9zkqB554bcq1dk39BWn4EwM" alt="sat-app-06.jpg" width="100%" height="100%"/>
-        </Box>
-        <Box
-          gridColumn={ isWholeScreen ? "span 2" : isHalfScreen ? "span 4" : "span 12" }
-          gridRow={ isWholeScreen ? "span 2" : "span 3" }
-          backgroundColor={colors.primary[400]}
-        >
-          <img src="https://drive.google.com/uc?export=view&id=14wYmwdDRRWRCOVlmchHOnvhwTd6g3NK6" alt="sat-app-07.jpg" width="100%" height="100%"/>
-        </Box>
-        <Box
-          gridColumn={ isWholeScreen ? "span 3" : isHalfScreen ? "span 6" : "span 12" }
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >          
-          <BoxClima
-            value="56%"
-            type="Porcentaje de humedad"
-            icon={ <CloudOutlined sx={{ color: colors.greenAccent[600], fontSize: "44px" }}/> }
-          />
-        </Box>
-        <Box
-          gridColumn={ isWholeScreen ? "span 3" : isHalfScreen ? "span 6" : "span 12" }
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <BoxClima
-            value="12.9 Km/H"
-            type="Velocidad del viento"
-            icon={ <Air sx={{ color: colors.greenAccent[600], fontSize: "44px" }}/> }
-          />
-        </Box>
+        {/*LINE CHART */}
         <Box
           gridColumn={ isWholeScreen ? "span 6" : "span 12" }
           gridRow={ isWholeScreen ? "span 3" : "span 2" }
@@ -124,6 +145,7 @@ const Dashboard = () => {
             <LineChartCauce isDashboard={true} />
           </Box>
         </Box>
+        {/*LINE CHART */}
         <Box
           gridColumn={ isWholeScreen ? "span 6" : "span 12" }
           gridRow={ isWholeScreen ? "span 3" : "span 2" }
