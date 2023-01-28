@@ -5,10 +5,9 @@ import Header from "../../components/Header";
 import BoxClima from "../../components/BoxClima";
 
 const Clima = () => {
-
+  // Theme and colors
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   return (
     <Box>
       <Header title="Estación meteorológica" subtitle="Lecturas de los sensores de clima" />
