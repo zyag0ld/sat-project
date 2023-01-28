@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
-import { inundaciones as data } from "../data/inundaciones";
+import { inundaciones } from "../data/inundaciones";
 
 const BarChartInundaciones = ({ isDashboard = false }) => {
   // Theme and colors
@@ -9,7 +9,7 @@ const BarChartInundaciones = ({ isDashboard = false }) => {
   const colors = tokens(theme.palette.mode);
   return (
     <ResponsiveBar
-      data={data}
+      data={inundaciones}
       theme={{
         axis: {
           domain: {
@@ -38,8 +38,8 @@ const BarChartInundaciones = ({ isDashboard = false }) => {
           },
         },
       }}
-      keys={["2020", "2021", "2022", "2023"]}
-      indexBy="mes"
+      keys={["Inundaciones", "Lluvias Severas", "Ciclones Tropicales", "Inestabilidad de Laderas", "Sequias"]}
+      indexBy="fecha"
       margin={{ top: 50, right: 120, bottom: 60, left: 50 }}
       padding={0.3}
       //minValue={0}
@@ -57,7 +57,7 @@ const BarChartInundaciones = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "Mes", // changed
+        legend: "Año", // changed
         legendPosition: "middle",
         legendOffset: 50,
       }}
