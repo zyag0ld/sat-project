@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Navigate, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Topbar from "./components/global/Topbar";
@@ -19,7 +19,7 @@ function App() {
   // Theme and colors
   const [theme, colorMode] = useMode();
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline/>
@@ -42,7 +42,7 @@ function App() {
           </div>
         </ThemeProvider>
       </ColorModeContext.Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
