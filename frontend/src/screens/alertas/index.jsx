@@ -16,8 +16,23 @@ const Alertas = () => {
   useEffect(() => {
     axios
       .get(`${URL}/alertas`)
-      .then((response) => {setAlertas(response.data)});
+      .then((response) => {setAlertas(response.data)})
+      .catch(error => console.error(error));
   }, []);
+  // Check changes in the API
+  useEffect(() => {
+    const interval = setInterval(() => {
+      axios
+        .get(`${URL}/alertas`)
+        .then(response => {
+          if (JSON.stringify(response.data) !== JSON.stringify(alertas)) {
+            setAlertas(response.data);
+          }
+        })
+        .catch(error => console.error(error));
+    }, 1000); // Check every 1 second
+    return () => clearInterval(interval);
+  }, [alertas]);
   // Data grid 
 	const columns = [
     // { field: "_id", headerName: "Id", flex: 1 },
@@ -42,11 +57,15 @@ const Alertas = () => {
       field: "publicada",
       headerName: "Publicada",
       flex: 1,
-      renderCell: ({ row: { publicada } }) => {
+      renderCell: ({ row: { publicada, _id } }) => {
+        const handleClick = () => {
+          const rowId = _id;
+          axios.put(`https://sat-project-backend.onrender.com/api/v1/alertas/${rowId}`, { publicada: !publicada });
+        };
         return (
           <Box width="100%" m="0 auto" display="flex" justifyContent="center">
-            {publicada === false && <IconButton><Close sx={{ fontSize: "16px", color: colors.grey[100] }}/></IconButton>}
-            {publicada === true && <IconButton><Check sx={{fontSize:"16px", color: colors.grey[100] }}/></IconButton>}
+            {publicada === false && <IconButton onClick={handleClick}><Close sx={{ fontSize: "16px", color: colors.grey[100] }}/></IconButton>}
+            {publicada === true && <IconButton onClick={handleClick}><Check sx={{fontSize:"16px", color: colors.grey[100] }}/></IconButton>}
           </Box>
         )
       }

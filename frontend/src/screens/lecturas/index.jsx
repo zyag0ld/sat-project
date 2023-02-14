@@ -15,8 +15,23 @@ const Lecturas = () => {
   useEffect(() => {
     axios
       .get(`${URL}/lecturas`)
-      .then((response) => {setLecturas(response.data)});
+      .then((response) => {setLecturas(response.data)})
+      .catch(error => console.error(error));
   }, []);
+  // Check changes in the API
+  useEffect(() => {
+    const interval = setInterval(() => {
+      axios
+        .get(`${URL}/lecturas`)
+        .then(response => {
+          if (JSON.stringify(response.data) !== JSON.stringify(lecturas)) {
+            setLecturas(response.data);
+          }
+        })
+        .catch(error => console.error(error));
+    }, 1000); // Check every 1 second
+    return () => clearInterval(interval);
+  }, [lecturas]);
   // Data grid 
   const columns = [
     // { field: "_id", headerName: "Id", flex: 1 },
