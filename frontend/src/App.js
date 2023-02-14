@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Navigate, Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Topbar from "./components/global/Topbar";
@@ -28,8 +28,7 @@ function App() {
             <main className = "content">
               <Topbar/>
               <Routes>
-                <Route path="/" element={<Navigate to="/dashboard" replace />} />
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/lecturas" element={<Lecturas />} />
                 <Route path="/alertas" element={<Alertas />} />
                 <Route path="/directorio" element={<Directorio />} />
